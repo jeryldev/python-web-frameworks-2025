@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650">
+  <!-- Background -->
+  <rect width="800" height="650" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="28" text-anchor="middle" font-weight="bold" fill="#009688">FastAPI Architecture</text>
+  
+  <!-- Components - Client moved more to the left -->
+  <rect x="50" y="170" width="140" height="70" rx="5" fill="#F5F5F5" stroke="#333333" stroke-width="2" />
+  <text x="120" y="205" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Client</text>
+  <text x="120" y="225" font-family="Arial" font-size="12" text-anchor="middle">Browser/App</text>
+  
+  <!-- FastAPI Framework Box -->
+  <rect x="320" y="100" width="380" height="360" rx="5" fill="#E8F5E9" stroke="#009688" stroke-width="2" />
+  <text x="510" y="130" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold" fill="#009688">FastAPI Framework</text>
+  
+  <!-- FastAPI Components -->
+  <rect x="340" y="170" width="140" height="70" rx="5" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2" />
+  <text x="410" y="195" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Router</text>
+  <text x="410" y="215" font-family="Arial" font-size="12" text-anchor="middle">Path Operations</text>
+  
+  <rect x="340" y="280" width="140" height="70" rx="5" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2" />
+  <text x="410" y="305" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Pydantic</text>
+  <text x="410" y="325" font-family="Arial" font-size="12" text-anchor="middle">Data Validation</text>
+  
+  <rect x="340" y="370" width="140" height="70" rx="5" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2" />
+  <text x="410" y="395" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Dependencies</text>
+  <text x="410" y="415" font-family="Arial" font-size="12" text-anchor="middle">Injection System</text>
+  
+  <rect x="540" y="170" width="140" height="70" rx="5" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2" />
+  <text x="610" y="195" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Starlette</text>
+  <text x="610" y="215" font-family="Arial" font-size="12" text-anchor="middle">ASGI Framework</text>
+  
+  <rect x="540" y="280" width="140" height="70" rx="5" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2" />
+  <text x="610" y="305" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Docs UI</text>
+  <text x="610" y="325" font-family="Arial" font-size="12" text-anchor="middle">Swagger/ReDoc</text>
+  
+  <rect x="540" y="370" width="140" height="70" rx="5" fill="#C8E6C9" stroke="#4CAF50" stroke-width="2" />
+  <text x="610" y="395" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Type Hints</text>
+  <text x="610" y="415" font-family="Arial" font-size="12" text-anchor="middle">Python 3.6+</text>
+
+  <!-- Database (Optional) moved more to the left -->
+  <rect x="50" y="370" width="140" height="70" rx="5" fill="#FFECB3" stroke="#FFC107" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="120" y="395" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Database</text>
+  <text x="120" y="415" font-family="Arial" font-size="12" text-anchor="middle">(Optional)</text>
+  
+  <!-- Arrows with markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Client to FastAPI -->
+  <line x1="190" y1="205" x2="340" y2="205" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="265" y="195" font-family="Arial" font-size="12" text-anchor="middle">HTTP Request</text>
+  
+  <!-- FastAPI to Database -->
+  <line x1="190" y1="380" x2="340" y2="380" stroke="#333" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowhead)" />
+  <text x="265" y="370" font-family="Arial" font-size="12" text-anchor="middle">Query</text>
+  
+  <!-- Database to FastAPI -->
+  <line x1="190" y1="410" x2="340" y2="410" stroke="#333" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowhead)" />
+  <text x="265" y="425" font-family="Arial" font-size="12" text-anchor="middle">Response</text>
+  
+  <!-- FastAPI to Client -->
+  <line x1="340" y1="235" x2="190" y2="235" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="265" y="250" font-family="Arial" font-size="12" text-anchor="middle">JSON Response</text>
+  
+  <!-- Component interactions -->
+  <line x1="410" y1="240" x2="410" y2="280" stroke="#333" stroke-width="1" marker-end="url(#arrowhead)" />
+  <line x1="410" y1="350" x2="410" y2="370" stroke="#333" stroke-width="1" marker-end="url(#arrowhead)" />
+  <line x1="480" y1="205" x2="540" y2="205" stroke="#333" stroke-width="1" marker-end="url(#arrowhead)" />
+  <line x1="480" y1="315" x2="540" y2="315" stroke="#333" stroke-width="1" marker-end="url(#arrowhead)" />
+  <line x1="480" y1="405" x2="540" y2="405" stroke="#333" stroke-width="1" marker-end="url(#arrowhead)" />
+  
+  <!-- Additional notes with more padding at the bottom -->
+  <rect x="100" y="490" width="600" height="110" rx="5" fill="#f0f0f0" stroke="#cccccc" stroke-width="1" />
+  <text x="120" y="520" font-family="Arial" font-size="16" fill="#333" font-weight="bold">Key Differences from Django:</text>
+  <text x="120" y="550" font-family="Arial" font-size="14" fill="#666">• No built-in ORM - Can use any database library (SQLAlchemy, databases, etc.)</text>
+  <text x="120" y="580" font-family="Arial" font-size="14" fill="#666">• API-first design - JSON is the primary response format, not HTML templates</text>
+</svg>

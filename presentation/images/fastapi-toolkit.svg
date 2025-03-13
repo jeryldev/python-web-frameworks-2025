@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="28" text-anchor="middle" font-weight="bold" fill="#009688">FastAPI: The Customizable Toolkit</text>
+  
+  <!-- Toolkit Base -->
+  <rect x="200" y="100" width="400" height="200" rx="10" fill="#E1F5FE" stroke="#0288D1" stroke-width="3" />
+  
+  <!-- FastAPI Logo placeholder -->
+  <rect x="220" y="120" width="100" height="50" rx="5" fill="#009688" />
+  <text x="270" y="152" font-family="Arial" font-size="20" text-anchor="middle" fill="white" font-weight="bold">FastAPI</text>
+  
+  <!-- Core components - in modular format -->
+  <rect x="230" y="180" width="100" height="50" rx="5" fill="#B3E5FC" stroke="#0288D1" stroke-width="1" />
+  <text x="280" y="210" font-family="Arial" font-size="16" text-anchor="middle">Routing</text>
+  
+  <rect x="350" y="180" width="100" height="50" rx="5" fill="#B3E5FC" stroke="#0288D1" stroke-width="1" />
+  <text x="400" y="210" font-family="Arial" font-size="16" text-anchor="middle">Validation</text>
+  
+  <rect x="470" y="180" width="100" height="50" rx="5" fill="#B3E5FC" stroke="#0288D1" stroke-width="1" />
+  <text x="520" y="210" font-family="Arial" font-size="16" text-anchor="middle">API Docs</text>
+  
+  <rect x="230" y="240" width="100" height="50" rx="5" fill="#B3E5FC" stroke="#0288D1" stroke-width="1" />
+  <text x="280" y="270" font-family="Arial" font-size="16" text-anchor="middle">Async</text>
+  
+  <rect x="350" y="240" width="100" height="50" rx="5" fill="#B3E5FC" stroke="#0288D1" stroke-width="1" />
+  <text x="400" y="270" font-family="Arial" font-size="16" text-anchor="middle">Type Hints</text>
+  
+  <rect x="470" y="240" width="100" height="50" rx="5" fill="#B3E5FC" stroke="#0288D1" stroke-width="1" />
+  <text x="520" y="270" font-family="Arial" font-size="16" text-anchor="middle">Dependency</text>
+  
+  <!-- Optional components you can add - centered as requested -->
+  <text x="400" y="330" font-family="Arial" font-size="18" text-anchor="middle" font-style="italic">Choose Your Add-ons</text>
+  
+  <!-- Precisely calculating the positions to center the add-ons -->
+  <!-- 5 boxes of 90px width with 20px spacing = 5*90 + 4*20 = 450 + 80 = 530px total width -->
+  <!-- To center: start at (800-530)/2 = 135px -->
+  
+  <rect x="135" y="350" width="90" height="40" rx="5" fill="#BBDEFB" stroke="#1976D2" stroke-width="1" stroke-dasharray="5,2" />
+  <text x="180" y="375" font-family="Arial" font-size="14" text-anchor="middle">SQLAlchemy</text>
+  
+  <rect x="245" y="350" width="90" height="40" rx="5" fill="#BBDEFB" stroke="#1976D2" stroke-width="1" stroke-dasharray="5,2" />
+  <text x="290" y="375" font-family="Arial" font-size="14" text-anchor="middle">Jinja2</text>
+  
+  <rect x="355" y="350" width="90" height="40" rx="5" fill="#BBDEFB" stroke="#1976D2" stroke-width="1" stroke-dasharray="5,2" />
+  <text x="400" y="375" font-family="Arial" font-size="14" text-anchor="middle">JWT Auth</text>
+  
+  <rect x="465" y="350" width="90" height="40" rx="5" fill="#BBDEFB" stroke="#1976D2" stroke-width="1" stroke-dasharray="5,2" />
+  <text x="510" y="375" font-family="Arial" font-size="14" text-anchor="middle">Redis</text>
+  
+  <rect x="575" y="350" width="90" height="40" rx="5" fill="#BBDEFB" stroke="#1976D2" stroke-width="1" stroke-dasharray="5,2" />
+  <text x="620" y="375" font-family="Arial" font-size="14" text-anchor="middle">MongoDB</text>
+  
+  <!-- Caption -->
+  <text x="400" y="425" font-family="Arial" font-size="18" text-anchor="middle" font-style="italic">"Like a customizable toolkit, add only what you need"</text>
+</svg>
