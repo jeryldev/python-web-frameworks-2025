@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django Todo App</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .completed {
+        text-decoration: line-through;
+        color: #9ca3af;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-md">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold text-center text-gray-800">Django Todo App</h1>
+        <p class="text-center text-gray-600">Simple todo app built with Django and Tailwind CSS</p>
+      </header>
+
+      <main>
+        <div class="bg-white rounded-lg shadow p-6">
+          <!-- Todo creation form -->
+          <form method="POST" action="{% url 'todo_list' %}" class="mb-6">
+            {% csrf_token %}
+            <label for="title" class="block text-sm font-medium text-gray-700 mb-1"
+              >Add a new todo</label
+            >
+            <div class="flex items-center">
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="What needs to be done?"
+                class="flex-1 border border-gray-300 rounded-md shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500"
+                required
+              />
+              <button
+                type="submit"
+                name="add"
+                value="true"
+                class="ml-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md"
+              >
+                Add
+              </button>
+            </div>
+          </form>
+
+          <!-- Todo list -->
+          <div>
+            <h2 class="text-lg font-medium text-gray-900 mb-3">Your Todos</h2>
+
+            <ul class="space-y-2">
+              {% for todo in todos %}
+              <li
+                class="flex items-center justify-between p-3 border border-gray-200 rounded-md hover:bg-gray-50"
+              >
+                <div class="flex items-center">
+                  <!-- Toggle completion status form -->
+                  <form method="POST" action="{% url 'todo_list' %}" class="mr-2">
+                    {% csrf_token %}
+                    <button
+                      type="submit"
+                      name="toggle"
+                      value="{{ todo.id }}"
+                      class="w-5 h-5 rounded border {% if todo.completed %}bg-green-500 border-green-600{% else %}border-gray-300{% endif %} flex items-center justify-center"
+                    >
+                      {% if todo.completed %}
+                      <svg
+                        class="w-3 h-3 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 13l4 4L19 7"
+                        ></path>
+                      </svg>
+                      {% endif %}
+                    </button>
+                  </form>
+
+                  <!-- Todo title -->
+                  <span class="{% if todo.completed %}completed{% endif %}">
+                    {{ todo.title }}
+                  </span>
+                </div>
+
+                <!-- Delete button -->
+                <form method="POST" action="{% url 'todo_list' %}">
+                  {% csrf_token %}
+                  <button
+                    type="submit"
+                    name="delete"
+                    value="{{ todo.id }}"
+                    class="text-red-500 hover:text-red-700"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                      ></path>
+                    </svg>
+                  </button>
+                </form>
+              </li>
+              {% empty %}
+              <li class="text-gray-500 text-center py-4">No todos yet. Add one above!</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Framework info for the presentation -->
+        <div class="mt-6 bg-blue-100 rounded-lg shadow p-4">
+            <h3 class="font-bold text-blue-800">Django Framework Notes:</h3>
+            <ul class="list-disc list-inside text-sm text-blue-700 mt-2">
+                <li>Django uses its own template language with tags like &#123;&#37; for &#37;&#125;</li>
+                <li>Forms use the standard HTML method="POST"</li>
+                <li>&#123;&#37; csrf_token &#37;&#125; provides security against cross-site request forgery</li>
+                <li>No database required in this implementation!</li>
+            </ul>
+        </div>
+      </main>
+
+      <footer class="mt-8 text-center text-sm text-gray-500">
+        <p>Built for Django vs FastAPI presentation</p>
+      </footer>
+    </div>
+  </body>
+</html>
