@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="600" y="60" font-family="Arial" font-size="32" text-anchor="middle" font-weight="bold" fill="#0c4b33">Django Request Flow</text>
+  
+  <!-- Django Framework Components Box -->
+  <rect x="175" y="100" width="850" height="60" rx="0" fill="#f0f0f0" stroke="#0c4b33" stroke-width="2" stroke-dasharray="10,5" />
+  <text x="600" y="140" font-family="Arial" font-size="18" text-anchor="middle" font-style="italic" fill="#0c4b33">Django Framework Components</text>
+  
+  <!-- Calculate positions to be truly centered -->
+  <!-- Participant boxes at the top - evenly distributed with equal margins -->
+  <rect x="50" y="180" width="120" height="50" rx="5" fill="#F5F5F5" stroke="#333333" stroke-width="2" />
+  <text x="110" y="210" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Browser</text>
+  
+  <rect x="250" y="180" width="120" height="50" rx="5" fill="#FBE5CD" stroke="#E8A333" stroke-width="2" />
+  <text x="310" y="210" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">URL Dispatcher</text>
+  
+  <rect x="450" y="180" width="120" height="50" rx="5" fill="#E2EFDA" stroke="#70AD47" stroke-width="2" />
+  <text x="510" y="210" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">View</text>
+  
+  <rect x="650" y="180" width="120" height="50" rx="5" fill="#DEEBF7" stroke="#4472C4" stroke-width="2" />
+  <text x="710" y="210" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Model</text>
+  
+  <rect x="850" y="180" width="120" height="50" rx="5" fill="#FFF2CC" stroke="#DFA53B" stroke-width="2" />
+  <text x="910" y="210" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Template</text>
+  
+  <rect x="1030" y="180" width="120" height="50" rx="5" fill="#F4CCCC" stroke="#CB4335" stroke-width="2" />
+  <text x="1090" y="210" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Database</text>
+  
+  <!-- Lifelines (dashed vertical lines) extended further down -->
+  <line x1="110" y1="230" x2="110" y2="820" stroke="#333" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="310" y1="230" x2="310" y2="820" stroke="#333" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="510" y1="230" x2="510" y2="820" stroke="#333" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="710" y1="230" x2="710" y2="820" stroke="#333" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="910" y1="230" x2="910" y2="820" stroke="#333" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="1090" y1="230" x2="1090" y2="820" stroke="#333" stroke-width="1" stroke-dasharray="5,5" />
+  
+  <!-- Arrows with markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Step 1: Browser to URL Dispatcher -->
+  <line x1="110" y1="270" x2="310" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="210" y="260" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">HTTP Request</text>
+  
+  <!-- Note 1 -->
+  <rect x="130" y="280" width="140" height="35" rx="5" fill="#FFF9C4" stroke="#FFC107" stroke-width="1" />
+  <text x="200" y="302" font-family="Arial" font-size="12" text-anchor="middle">User visits a page</text>
+  
+  <!-- Step 2: URL Dispatcher to View -->
+  <line x1="310" y1="350" x2="510" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="410" y="340" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Route to appropriate view</text>
+  
+  <!-- Note 2 -->
+  <rect x="330" y="360" width="180" height="35" rx="5" fill="#FFF9C4" stroke="#FFC107" stroke-width="1" />
+  <text x="420" y="382" font-family="Arial" font-size="12" text-anchor="middle">urls.py maps URLs to views</text>
+  
+  <!-- Step 3: View to Model -->
+  <line x1="510" y1="430" x2="710" y2="430" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="610" y="420" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Request data</text>
+  
+  <!-- Note 3 -->
+  <rect x="530" y="440" width="190" height="35" rx="5" fill="#FFF9C4" stroke="#FFC107" stroke-width="1" />
+  <text x="625" y="462" font-family="Arial" font-size="12" text-anchor="middle">views.py contains business logic</text>
+  
+  <!-- Step 4: Model to Database -->
+  <line x1="710" y1="510" x2="1090" y2="510" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="900" y="500" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Query via ORM</text>
+  
+  <!-- Note 4 -->
+  <rect x="760" y="520" width="190" height="35" rx="5" fill="#FFF9C4" stroke="#FFC107" stroke-width="1" />
+  <text x="855" y="542" font-family="Arial" font-size="12" text-anchor="middle">models.py defines data structure</text>
+  
+  <!-- Step 5: Database to Model -->
+  <line x1="1090" y1="590" x2="710" y2="590" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="900" y="580" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Return database records</text>
+  
+  <!-- Step 6: Model to View -->
+  <line x1="710" y1="650" x2="510" y2="650" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="610" y="640" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Return Python objects</text>
+  
+  <!-- Step 7: View to Template -->
+  <line x1="510" y1="700" x2="910" y2="700" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="710" y="690" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Pass context data</text>
+  
+  <!-- Note 5 -->
+  <rect x="650" y="710" width="200" height="35" rx="5" fill="#FFF9C4" stroke="#FFC107" stroke-width="1" />
+  <text x="750" y="732" font-family="Arial" font-size="12" text-anchor="middle">view decides which template to use</text>
+  
+  <!-- Step 8: Template to Browser -->
+  <line x1="910" y1="770" x2="110" y2="770" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="510" y="760" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Render and return HTML</text>
+  
+  <!-- Note 6 -->
+  <rect x="350" y="780" width="250" height="35" rx="5" fill="#FFF9C4" stroke="#FFC107" stroke-width="1" />
+  <text x="475" y="802" font-family="Arial" font-size="12" text-anchor="middle">template.html generates the final output</text>
+</svg>
